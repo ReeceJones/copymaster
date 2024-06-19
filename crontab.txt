@@ -1,0 +1,1 @@
+* * * * * /bin/bash /scripts/copy.sh "$LOCK_NAME" "$SOURCE" "$TARGET" "$EXCLUDE" >> /copy.log 2>&1
