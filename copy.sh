@@ -1,9 +1,9 @@
 #!/bin/bash
 
-LOCK_NAME=$1
-SOURCE=$2
-TARGET=$3
-EXCLUDE=$4
+LOCK_NAME=copy
+SOURCE=$1
+TARGET=$2
+EXCLUDE=$3
 
 echo "($LOCK_NAME) Copying $SOURCE to $TARGET with exclude $EXCLUDE"
 
