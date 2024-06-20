@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 LOCK_NAME=copy
 SOURCE=$1
@@ -13,7 +14,7 @@ exec {lock_fd}>/locks/$LOCK_NAME || exit 1
 
 flock -n "$lock_fd" || { echo "ERROR: flock() failed." >&2; exit 1; }
 
-rclone copy "$SOURCE" "$TARGET" --exclude="$EXCLUDE"
+rclone copy "$SOURCE" "$TARGET" --exclude="$EXCLUDE" --log-level INFO
 
 flock -u "$lock_fd"
 
